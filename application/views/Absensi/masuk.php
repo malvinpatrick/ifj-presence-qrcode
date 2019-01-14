@@ -139,7 +139,7 @@
                     mirror: false,
                     captureImage: false,
                     backgroundScan: false,
-                    refractoryPeriod: 500,
+                    refractoryPeriod: 1000,
                     scanPeriod: 1
                 });
 
