@@ -13,13 +13,6 @@
     <!--BOOTSTRAP JAVA SCRIPT-->
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <style>
-        body{
-            background-image: url("../../absenpd2/asset/Image/background7.png");
-            background-attachment: fixed;
-            background-repeat: no-repeat;
-            background-size: cover;
-            background-position: center;
-        }
         html,
         body {
             height: 100%;
@@ -81,7 +74,7 @@
 </script>
 <body class="text-center">
     <div style="margin-bottom: 50px">
-        <nav class="navbar navbar-light navbar-expand-lg fixed-top">
+        <nav class="navbar navbar-dark bg-dark text-light navbar-expand-lg fixed-top">
             <a class="navbar-brand" href="#" style="width: 155px;padding: 0px">
                 <img src="../../absenpd2/asset/Image/logo.png" width="150px">
             </a>
@@ -89,7 +82,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="lead">
-                iSTTS for Jesus
+                iFJ Presence
             </div>
         </nav>
     </div>
@@ -98,8 +91,8 @@
         <h1>Welcome to iFJ Presence</h1>
         <form class="form-signin" action="<?=site_url('Login/index')?>" method="post">
             <h1 class="h3 mb-3 font-weight-normal">Sign In</h1>
-            <input name="username" type="text" id="inputEmail" class="form-control" placeholder="Username" value="absen" required autofocus>
-            <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" value="sttsuntukjesus" required>
+            <input name="username" type="text" id="inputEmail" class="form-control" placeholder="Username" value="" required autofocus>
+            <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Password" value="" required>
             <input type="submit" name="signin" class="btn btn-lg btn-primary btn-block" value="Sign In">
             <p class="mt-5 mb-3 text-white" >&copy; PD iSTTS 2019</p>
         </form>

@@ -6,8 +6,11 @@
         <title>iFJ Presence</title>
         <!--BOOTSTRAP CSS-->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+        <!--QUAGGA JS-->
+        <script src="<?=base_url('asset/instascan/instascan.min.js')?>"></script>
+        <script src="<?=base_url('asset/instascan/vue.min.js')?>"></script>
         <!--JQUERY-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
         <!--POPPER-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
         <!--BOOTSTRAP JAVA SCRIPT-->
@@ -18,9 +21,9 @@
         <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>
         <script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
-        <!--SWEET ALERT-->
-        <script src="<?=base_url('asset/SweetAlert/sweetalert2.all.min.js')?>"></script>
+        <!--SWEET ALERT-->        
         <link rel="stylesheet" href="<?=base_url('asset/SweetAlert/sweetalert2.min.css')?>">
+        <script src="<?=base_url('asset/SweetAlert/sweetalert2.all.min.js')?>"></script>
 
         <style>
             body{
@@ -37,11 +40,6 @@
             }
 
         </style>
-        <script>
-            $(document).ready(function(){
-                $('body').css('background-image', 'url(<?=base_url('asset/Image/background7.png')?>)');
-            });
-        </script>
     </head>
     <body>
         <!--MODAL CONFIRM-->
@@ -87,9 +85,10 @@
                 </div>
             </div>
         </div>
-
+        
+        <!--NAVBAR-->
         <div style="margin-bottom: 100px">
-            <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
                 <a class="navbar-brand" href="#" style="width: 155px;padding: 0px">
                     <img src="<?=base_url('asset/Image/logo.png')?>" width="150px">
                 </a>
@@ -99,10 +98,10 @@
 
                 <div class="navbar-collapse collapse" id="navbarToggler" >
                     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item active">
+                        <li class="nav-item <?=$header=='masuk' ? 'active' : ''?>">
                             <a class="nav-link" data-toggle="modal" data-target="#confirmAdminMasuk" hred="#">Absen Masuk</a>
                         </li>
-                        <li class="nav-item active">
+                        <li class="nav-item <?=$header=='keluar' ? 'active' : ''?>">
                             <a class="nav-link" data-toggle="modal" data-target="#confirmAdminKeluar">Absen Keluar</a>
                         </li>
                         <li class="nav-item">

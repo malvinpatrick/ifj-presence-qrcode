@@ -29,13 +29,16 @@ class Absensi extends CI_Controller {
      */
     public function masuk()
     {
-        $this->load->view("Absensi/header"); 
+        $data['header'] = 'masuk';
+        $this->load->view("Absensi/header", $data); 
         $this->load->view("Absensi/masuk"); 
     }
 
     public function keluar()
     {
-        $this->load->view("Absensi/header"); 
+        
+        $data['header'] = 'keluar';
+        $this->load->view("Absensi/header", $data); 
         $this->load->view("Absensi/keluar"); 
     }
 
@@ -53,10 +56,11 @@ class Absensi extends CI_Controller {
     {
         $nrp = $this->input->post('nrp');        
         $temp = $this->db->from('mahasiswa')->where('NRP', $nrp)->count_all_results();
-
+        
         //CEK AVAIBLE NRP
         if($temp > 0){
-
+            $nama = $this->Mahasiswa->getNamaByNrp($nrp);
+            
             //CEK SUDAH MASUK / BLM
             $temp2 = $this->db->from('kehadiran')
                             ->where('NRP', $nrp)
@@ -64,7 +68,6 @@ class Absensi extends CI_Controller {
                             ->count_all_results();
             
             if($temp2 == 0){
-                $nama = $this->Mahasiswa->getNamaByNrp($nrp);
                 $data = array(
                     'NRP' => $nrp,
                     'Jam_Keluar' => null
@@ -79,12 +82,10 @@ class Absensi extends CI_Controller {
                 $parse['status'] = false;
                 $parse['message'] = "$nama sudah absen masuk";
             }
-           
         }else{
             $parse['status'] = false;
             $parse['message'] = "NRP tidak valid / belum terdaftar";
         }
-            
         header('Content-Type: application/json');
         echo json_encode($parse);
     }
