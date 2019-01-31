@@ -18,6 +18,13 @@
                             <h3 class="h5 text-center">Scan QR</h3>
                             <select id="deviceSelection" class="form-control"></select>
                         </div>
+                        <div class="form-group">
+                            <h3 class="h5 text-center">Mirror</h3>
+                            <select id="mirrorSelection" class="form-control">
+                                <option value="1">True</option>
+                                <option value="0" selected>False</option>
+                            </select>
+                        </div>
                         <div class="text-center">
                             <video width="50%" id="preview" class="mb-3"></video>
                         </div>
@@ -98,15 +105,12 @@
                     }).done(function(obj){
                         if(obj.status == true){
                             //SHOW ALERT SUCCESS
-                            const toast = Swal.mixin({
-                            toast: true,
-                            position: 'top-end',
-                            showConfirmButton: false,
-                            timer: 3000
-                            });
-                            toast({
+                            Swal.fire({
+                                position: 'center',
                                 type: 'success',
-                                title: obj.message
+                                title: obj.message,
+                                showConfirmButton: false,
+                                timer: 1500
                             })
                             reloadTabel();
 
@@ -114,15 +118,12 @@
                             $('#formMasuk').find("input[type=text]").val("");
                         }else{
                             //SHOW ALERT ERROR
-                            const toast = Swal.mixin({
-                            toast: true,
-                            position: 'top-end',
-                            showConfirmButton: false,
-                            timer: 3000
-                            });
-                            toast({
+                            Swal.fire({
+                                position: 'center',
                                 type: 'error',
-                                title: obj.message
+                                title: obj.message,
+                                showConfirmButton: false,
+                                timer: 1500
                             })
                         }
                     });
@@ -133,7 +134,7 @@
         <!--QRCODE-->
         <script>
             $(document).ready(function(){
-                let scanner = new Instascan.Scanner({ 
+                var scanner = new Instascan.Scanner({ 
                     continuous: true,
                     video: document.getElementById('preview'),
                     mirror: false,
@@ -168,8 +169,32 @@
                 //CAMERA SELECT
                 $('#deviceSelection').on('change', function() {
                     let index = this.value;
+                    scanner.stop();
                     Instascan.Camera.getCameras().then(function (cameras) {
                         scanner.start(cameras[index]);
+                    });
+                });
+
+                //MIRROR SELECT 
+                $("#mirrorSelection").on('change', function() {
+                    let index = this.value;
+                    let mirror = null;
+                    if(index == 1)
+                        mirror = true;
+                    else    
+                        mirror = false;
+
+                    scanner = new Instascan.Scanner({ 
+                        continuous: true,
+                        video: document.getElementById('preview'),
+                        mirror: mirror,
+                        captureImage: false,
+                        backgroundScan: false,
+                        refractoryPeriod: 1000,
+                        scanPeriod: 1
+                    });
+                    Instascan.Camera.getCameras().then(function (cameras) {
+                        scanner.start(cameras[0]);
                     });
                 });
             });
