@@ -11,7 +11,7 @@ class Admin extends CI_Controller {
         $this->load->database();
         date_default_timezone_set("Asia/Jakarta");
 
-        $this->load->model('modelAdmin', 'Admin');
+        $this->load->model('ModelAdmin');
 
         if($this->session->userdata('login') != true or $this->session->userdata('type') != 'admin')
             redirect("Login");
@@ -60,9 +60,9 @@ class Admin extends CI_Controller {
             $filterAtas = date('d-m-Y', strtotime($this->input->post('filterAtas')));
             $filterBawah = date('d-m-Y', strtotime($this->input->post('filterBawah')));
 
-            $data = $this->Admin->fetchLaporanByDate($filterAtas, $filterBawah);
+            $data = $this->ModelAdmin->fetchLaporanByDate($filterAtas, $filterBawah);
             $parse['data'] = $data;
-            $parse['chart'] = $this->Admin->countAttendanceByDate($filterAtas, $filterBawah);
+            $parse['chart'] = $this->ModelAdmin->countAttendanceByDate($filterAtas, $filterBawah);
             $parse['periode'] = "periode $filterAtas s/d $filterBawah";
         }
         header('Content-Type: application/json');
@@ -78,7 +78,7 @@ class Admin extends CI_Controller {
         $date1 = date('d-m-Y', strtotime($this->input->get('date1')));
         $date2 = date('d-m-Y', strtotime($this->input->get('date2')));
 
-        $data = $this->Admin->fetchLaporanByDate($date1, $date2);
+        $data = $this->ModelAdmin->fetchLaporanByDate($date1, $date2);
 
         header('Content-Type: text/csv; charset=utf-8');
         header("Content-Disposition: attachment; filename=Laporan Kehadiran periode $date1 - $date2.csv");
@@ -101,7 +101,7 @@ class Admin extends CI_Controller {
         $date1 = date('d-m-Y', strtotime($this->input->get('date1')));
         $date2 = date('d-m-Y', strtotime($this->input->get('date2')));
 
-        $data = $this->Admin->fetchLaporanByDate($date1, $date2);
+        $data = $this->ModelAdmin->fetchLaporanByDate($date1, $date2);
 
         $parse['headerLaporan'] = "Laporan Kehadiran UKK PD STTS";
         $parse['headerPeriode'] = "$date1 s/d $date2";

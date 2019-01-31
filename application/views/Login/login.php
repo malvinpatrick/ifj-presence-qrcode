@@ -76,7 +76,7 @@
     <div style="margin-bottom: 50px">
         <nav class="navbar navbar-dark bg-dark text-light navbar-expand-lg fixed-top">
             <a class="navbar-brand" href="#" style="width: 155px;padding: 0px">
-                <img src="../../absenpd2/asset/Image/logo.png" width="150px">
+                <img src="<?=base_url('asset/Image/logo.png')?>" width="150px">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>

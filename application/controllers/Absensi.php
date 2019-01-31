@@ -11,8 +11,8 @@ class Absensi extends CI_Controller {
         $this->load->database();
         date_default_timezone_set("Asia/Jakarta");
 
-        $this->load->model('modelAbsensi', 'Absensi');
-        $this->load->model('modelMahasiswa', 'Mahasiswa');
+        $this->load->model('ModelAbsensi');
+        $this->load->model('ModelMahasiswa');
 
         if($this->session->userdata('login') != true or $this->session->userdata('type') != 'absen')
             redirect("Login");
@@ -59,7 +59,7 @@ class Absensi extends CI_Controller {
         
         //CEK AVAIBLE NRP
         if($temp > 0){
-            $nama = $this->Mahasiswa->getNamaByNrp($nrp);
+            $nama = $this->ModelMahasiswa->getNamaByNrp($nrp);
             
             //CEK SUDAH MASUK / BLM
             $temp2 = $this->db->from('kehadiran')
@@ -100,7 +100,7 @@ class Absensi extends CI_Controller {
 
         //CEK APAKAH SUDAH ABSEN MASUK / BLM
         if($temp > 0){
-            $nama = $this->Mahasiswa->getNamaByNrp($nrp);
+            $nama = $this->ModelMahasiswa->getNamaByNrp($nrp);
             //CEK APAKAH KEDOBELAN ABSEN KELUAR
             $temp2 = $this->db->select('Jam_Keluar as jam_keluar')
                             ->from('kehadiran')
@@ -172,14 +172,14 @@ class Absensi extends CI_Controller {
      */
     public function fetchAbsensiMasuk()
     {
-        $parse = $this->Absensi->fetchMasuk();
+        $parse = $this->ModelAbsensi->fetchMasuk();
         header('Content-Type: application/json');
         echo json_encode($parse);
     }
 
     public function fetchAbsensiKeluar()
     {
-        $parse = $this->Absensi->fetchKeluar();
+        $parse = $this->ModelAbsensi->fetchKeluar();
         header('Content-Type: application/json');
         echo json_encode($parse);
     }
