@@ -44,7 +44,8 @@ class Absensi extends CI_Controller {
 
     public function registrasi()
     {
-        $this->load->view('Absensi/header');
+        $data['header'] = '';
+        $this->load->view('Absensi/header', $data);
         $this->load->view('Absensi/registrasi');
     }
 
