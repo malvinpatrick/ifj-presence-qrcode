@@ -26,7 +26,7 @@
                             </select>
                         </div>
                         <div class="text-center">
-                            <video width="50%" id="preview" class="mb-3"></video>
+                            <video width="100%" id="preview" class="mb-3"></video>
                         </div>
                     </div>
                 </div>
@@ -95,6 +95,20 @@
                 }
                 reloadTabel();
 
+                //NOTIFIKASI SUARA
+				function soundNotification(frequency, type) {
+					// Source: http://marcgg.com/blog/2016/11/01/javascript-audio/
+					var context = new AudioContext();
+					var o = context.createOscillator();
+					var g = context.createGain();
+					o.type = type;
+					o.connect(g);
+					o.frequency.value = frequency;
+					g.connect(context.destination);
+					o.start(0);
+					g.gain.exponentialRampToValueAtTime(0.00001, context.currentTime+1);
+				}
+
                 //INSERT ABSENSI
                 $('#formKeluar').submit(function(e){
                     e.preventDefault();
@@ -113,6 +127,7 @@
                                 showConfirmButton: false,
                                 timer: 1500
                             })
+                            soundNotification(440.0, 'sine');
                             reloadTabel();
 
                             //CLEAR
@@ -126,6 +141,10 @@
                                 showConfirmButton: false,
                                 timer: 1500
                             })
+                            soundNotification(261.6, 'square');
+							setTimeout(function(){
+								soundNotification(261.6, 'square');								
+							}, 100);
                         }
                     });
                 });

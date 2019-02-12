@@ -13,20 +13,20 @@
                         </div>
                         <button type="submit" class="btn btn-primary btn-block" name="submit">Submit</button>
                     </form>
-                    <div class='mt-2 pt-2 border-top'>
-                        <div class="form-group">
+                    <div class='mt-2 pt-2 border-top'>						
+						<div class="form-group">
                             <h3 class="h5 text-center">Scan QR</h3>
                             <select id="deviceSelection" class="form-control"></select>
                         </div>
                         <div class="form-group">
-                            <h3 class="h5 text-center">Mirror</h3>
+                            <h3 class="h5 text-center">Mirror Image</h3>
                             <select id="mirrorSelection" class="form-control">
                                 <option value="1">True</option>
                                 <option value="0" selected>False</option>
                             </select>
                         </div>
                         <div class="text-center">
-                            <video width="50%" id="preview" class="mb-3"></video>
+                            <video width="100%" id="preview" class="mb-3"></video>
                         </div>
                     </div>
                 </div>
@@ -94,6 +94,20 @@
                 }
                 reloadTabel();
 
+				//NOTIFIKASI SUARA
+				function soundNotification(frequency, type) {
+					// Source: http://marcgg.com/blog/2016/11/01/javascript-audio/
+					var context = new AudioContext();
+					var o = context.createOscillator();
+					var g = context.createGain();
+					o.type = type;
+					o.connect(g);
+					o.frequency.value = frequency;
+					g.connect(context.destination);
+					o.start(0);
+					g.gain.exponentialRampToValueAtTime(0.00001, context.currentTime+1);
+				}			
+				
                 //INSERT ABSENSI
                 $('#formMasuk').submit(function(e){
                     e.preventDefault();
@@ -102,8 +116,8 @@
                         method : 'post',
                         dataType : 'json',
                         data : $("#formMasuk").serialize()
-                    }).done(function(obj){
-                        if(obj.status == true){
+                    }).done(function(obj){						
+                        if (obj.status == true) {
                             //SHOW ALERT SUCCESS
                             Swal.fire({
                                 position: 'center',
@@ -112,11 +126,12 @@
                                 showConfirmButton: false,
                                 timer: 1500
                             })
-                            reloadTabel();
-
+							soundNotification(440.0, 'sine');
+                            reloadTabel();				
+							
                             //CLEAR
                             $('#formMasuk').find("input[type=text]").val("");
-                        }else{
+                        } else {
                             //SHOW ALERT ERROR
                             Swal.fire({
                                 position: 'center',
@@ -125,6 +140,10 @@
                                 showConfirmButton: false,
                                 timer: 1500
                             })
+							soundNotification(261.6, 'square');
+							setTimeout(function(){
+								soundNotification(261.6, 'square');								
+							}, 100);
                         }
                     });
                 });
