@@ -24,7 +24,7 @@
                                     <option value=3>Maret</option>
                                     <option value=4>April</option>
                                     <option value=5>Mei</option>
-                                    <option value=6></option>Juni</option>
+                                    <option value=6>Juni</option>
                                     <option value=7>Juli</option>
                                     <option value=8>Agustus</option>
                                     <option value=9>September</option>
@@ -54,7 +54,7 @@
                                 <option value=3>S1-ELEKTRO</option>
                                 <option value=4>S1-INDUSTRI</option>
                                 <option value=5>S1-DESPRO</option>
-                                <option value=6></option>D3-INFORMATIKA</option>
+                                <option value=6>D3-INFORMATIKA</option>
                             </select>
                         </div>
                         <button type="submit" class="btn btn-primary" name="submit">Submit</button>
