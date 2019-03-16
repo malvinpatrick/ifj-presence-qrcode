@@ -160,7 +160,7 @@
             $("#printLaporan").click(function(){
                 let date1 = $('#filterAtas').val();
                 let date2 = $('#filterBawah').val();
-                let win = window.open("<?=site_url('Admin/print?date1=')?>" + date1 + '&date2=' + date2);
+                let win = window.open("<?=site_url('Admin/print_laporan?date1=')?>" + date1 + '&date2=' + date2);
                 if (win) {
                     //Browser has allowed it to be opened
                     win.focus();
