@@ -96,7 +96,7 @@ class Admin extends CI_Controller {
      * UNTUK SHOW TAMPILAN POLOS VIEW PRINT
      * BY : PATRICK
      */
-    public function print()
+    public function print_laporan()
     {
         $date1 = date('d-m-Y', strtotime($this->input->get('date1')));
         $date2 = date('d-m-Y', strtotime($this->input->get('date2')));
