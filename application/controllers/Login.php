@@ -14,7 +14,6 @@ class Login extends CI_Controller {
 	public function index()
 	{
         if($this->input->post('signin')){
-            echo $this->input->post('username');
             if($this->input->post('username') == 'absen' && $this->input->post('password') == 'sttsuntukjesus'){
                 $this->session->set_userdata('login', true);
                 $this->session->set_userdata('type', 'absen');
