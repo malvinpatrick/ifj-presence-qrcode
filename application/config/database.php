@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'ifj-presence-mysqldbserver.mysql.database.azure.com',
-	'username' => 'mysqldbuser@ifj-presence-mysqldbserver',
-	'password' => 'sttsuntukJesus123',
-	'database' => 'mysql_ifj_presence',
+	'hostname' => 'localhost',
+	'username' => 'root',
+	'password' => '',
+	'database' => '6lzapjvxod',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
