@@ -313,20 +313,29 @@ INSERT INTO mahasiswa VALUES('193184','Haidee Delicia',STR_TO_DATE('','%d-%m-%Y'
 INSERT INTO mahasiswa VALUES('193184','Ariel Nova',STR_TO_DATE('','%d-%m-%Y'),'',,0);
 INSERT INTO mahasiswa VALUES('193244','Albert Julius',STR_TO_DATE('','%d-%m-%Y'),'',,0);
 INSERT INTO mahasiswa VALUES('193274','Johan Stefanus S.',STR_TO_DATE('','%d-%m-%Y'),'',,0);
-INSERT INTO mahasiswa VALUES('193300',' Michelle Annabelle Surya Atmaja',STR_TO_DATE('06-06-2001','%d-%m-%Y'),'',7,0)
-INSERT INTO mahasiswa VALUES('193214',' Michael Jonathan',STR_TO_DATE('','%d-%m-%Y'),'',,0)
-INSERT INTO mahasiswa VALUES('193274','johan stefanus sanjaya',STR_TO_DATE('','%d-%m-%Y'),'',,0)
-INSERT INTO mahasiswa VALUES('193223','vincensius calvin c.',STR_TO_DATE('','%d-%m-%Y'),'',,0)
-INSERT INTO mahasiswa VALUES('193013','christalia emerald',STR_TO_DATE('','%d-%m-%Y'),'',,0)
-INSERT INTO mahasiswa VALUES('193034','Valentino Kristofer Candra',STR_TO_DATE('','%d-%m-%Y'),'',,0)
-INSERT INTO mahasiswa VALUES('193077','Jeffrey Adrian',STR_TO_DATE('','%d-%m-%Y'),'',,0)
-INSERT INTO mahasiswa VALUES('193259','frely manbait',STR_TO_DATE('','%d-%m-%Y'),'',,0)
-INSERT INTO mahasiswa VALUES('193214','Michael Jonathan ',STR_TO_DATE('','%d-%m-%Y'),'',,0)
-INSERT INTO mahasiswa VALUES('218170438','FELIX AVELLINO',STR_TO_DATE('','%d-%m-%Y'),'',,0)
-INSERT INTO mahasiswa VALUES('193182','Lawrence Patrick',STR_TO_DATE('','%d-%m-%Y'),'',,0)
-INSERT INTO mahasiswa VALUES('193010','Ray Vitto Nugroho',STR_TO_DATE('','%d-%m-%Y'),'',,0)
-INSERT INTO mahasiswa VALUES('193014','louis chand',STR_TO_DATE('','%d-%m-%Y'),'',,0)
-INSERT INTO mahasiswa VALUES('193572','albertus verrel',STR_TO_DATE('','%d-%m-%Y'),'Pria',1,0)
+INSERT INTO mahasiswa VALUES('193300',' Michelle Annabelle Surya Atmaja',STR_TO_DATE('06-06-2001','%d-%m-%Y'),'',7,0);
+INSERT INTO mahasiswa VALUES('193214',' Michael Jonathan',STR_TO_DATE('','%d-%m-%Y'),'',,0);
+INSERT INTO mahasiswa VALUES('193274','johan stefanus sanjaya',STR_TO_DATE('','%d-%m-%Y'),'',,0);
+INSERT INTO mahasiswa VALUES('193223','vincensius calvin c.',STR_TO_DATE('','%d-%m-%Y'),'',,0);
+INSERT INTO mahasiswa VALUES('193013','christalia emerald',STR_TO_DATE('','%d-%m-%Y'),'',,0);
+INSERT INTO mahasiswa VALUES('193034','Valentino Kristofer Candra',STR_TO_DATE('','%d-%m-%Y'),'',,0);
+INSERT INTO mahasiswa VALUES('193077','Jeffrey Adrian',STR_TO_DATE('','%d-%m-%Y'),'',,0);
+INSERT INTO mahasiswa VALUES('193259','freli manbait',STR_TO_DATE('','%d-%m-%Y'),'',,0);
+INSERT INTO mahasiswa VALUES('193214','Michael Jonathan ',STR_TO_DATE('','%d-%m-%Y'),'',,0);
+INSERT INTO mahasiswa VALUES('218170438','FELIX AVELLINO',STR_TO_DATE('','%d-%m-%Y'),'',,0);
+INSERT INTO mahasiswa VALUES('193274',' johan stefanus sanjaya',STR_TO_DATE('','%d-%m-%Y'),'',,0);
+INSERT INTO mahasiswa VALUES('193010','Ray Vitto Nugroho',STR_TO_DATE('','%d-%m-%Y'),'',,0);
+INSERT INTO mahasiswa VALUES('193014','louis chandra',STR_TO_DATE('','%d-%m-%Y'),'',,0);
+INSERT INTO mahasiswa VALUES('193077','Jeffrey Adrian',STR_TO_DATE('','%d-%m-%Y'),'',,0);
+INSERT INTO mahasiswa VALUES('193011',' lucy felicia',STR_TO_DATE('','%d-%m-%Y'),'',,0);
+INSERT INTO mahasiswa VALUES('193169','james tegar',STR_TO_DATE('','%d-%m-%Y'),'',,0);
+INSERT INTO mahasiswa VALUES('193496','aldo stefanus T',STR_TO_DATE('','%d-%m-%Y'),'',,0);
+INSERT INTO mahasiswa VALUES('193269','Lucas Zelig',STR_TO_DATE('','%d-%m-%Y'),'',,0);
+INSERT INTO mahasiswa VALUES('193295','Anthony Natanael O',STR_TO_DATE('','%d-%m-%Y'),'',,0);
+INSERT INTO mahasiswa VALUES('193077','Jeffrey Adrian',STR_TO_DATE('','%d-%m-%Y'),'',,0);
+INSERT INTO mahasiswa VALUES('193167','Hans Felix',STR_TO_DATE('','%d-%m-%Y'),'',,0);
+INSERT INTO mahasiswa VALUES('193276','Marcellino Kevin',STR_TO_DATE('','%d-%m-%Y'),'',,0);
+INSERT INTO mahasiswa VALUES('193572','albertus verrel',STR_TO_DATE('','%d-%m-%Y'),'Pria',1,0);
 
 
 
